@@ -1,0 +1,20 @@
+#########################################################################
+# CustomPing by MrCote33 - Configuration file
+# Please check for updates, and remember to update the config if needed!
+#########################################################################
+
+# Section related to the per command permission system.
+permission-system:
+  # Set this to true if you want to enable the permission system.
+  enabled: false
+  # Customize the message sent to the players if they do not have required permission.
+  no-perm-message: "&cYou do not have permissions to execute this command."
+
+# Section related to the tablist management (you can open the tablist by pressing TAB in game).
+tablist:
+  # Set this to true if you want to show player's ping in the tablist with the prefix.
+  enabled: true
+  # Customize the tablist prefix, use %ping% to indicate player's latency. You do not need to put a space at the end.
+  prefix: "&7[&a%ping%ms&7]&f"
+  # Update delay time (in seconds) - 5 means that the tablist is updated every 5 seconds.
+  update-delay: 1
