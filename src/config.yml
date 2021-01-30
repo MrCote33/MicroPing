@@ -16,5 +16,5 @@ tablist:
   enabled: true
   # Customize the tablist prefix, use %ping% to indicate player's latency. You do not need to put a space at the end.
   prefix: "&7[&a%ping%ms&7]&f"
-  # Update delay time (in seconds) - 5 means that the tablist is updated every 5 seconds.
+  # Update delay time (in seconds) - 1 means that the tablist is updated every 1 seconds.
   update-delay: 1

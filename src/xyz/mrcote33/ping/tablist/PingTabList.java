@@ -21,7 +21,7 @@ public class PingTabList extends BukkitRunnable {
 			
 			String currentName = player.getName();
 			final String prefix = this.plugin.getConfig().getString("tablist.prefix");
-            player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', prefix.replace("%ping%", "" + PingUtil.getPing(player))) + " " + currentName);
+            player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', prefix.replace("%ping%", "" + PingUtil.getPing(player))) + " " + currentName + " ");
 			
 		}
 		
