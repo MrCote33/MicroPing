@@ -11,7 +11,7 @@ public class PingTabList extends BukkitRunnable {
 	
 	private MicroPing plugin;
 	
-	public PingTabList(final MicroPing plugin) {
+	public PingTabList(MicroPing plugin) {
 		this.plugin = plugin;
 	}
 	
@@ -21,7 +21,7 @@ public class PingTabList extends BukkitRunnable {
 			
 			int maxPing = 0;
 			
-			for(final Player player : this.plugin.getServer().getOnlinePlayers()) {
+			for(Player player : this.plugin.getServer().getOnlinePlayers()) {
 				
 				if(maxPing < PingUtil.getPing(player)) {
 					maxPing = PingUtil.getPing(player);
@@ -29,11 +29,11 @@ public class PingTabList extends BukkitRunnable {
 				
 			}
 			
-			for(final Player player : this.plugin.getServer().getOnlinePlayers()) {
+			for(Player player : this.plugin.getServer().getOnlinePlayers()) {
 				
 				String currentName = player.getName();
 				String playerPing = "";
-				final String prefix = this.plugin.getConfig().getString("tablist.prefix");
+				String prefix = this.plugin.getConfig().getString("tablist.prefix");
 				
 				if(Integer.toString(maxPing).length() == Integer.toString(PingUtil.getPing(player)).length()) {
 					
@@ -57,10 +57,10 @@ public class PingTabList extends BukkitRunnable {
 			
 		} else {
 			
-			for(final Player player : this.plugin.getServer().getOnlinePlayers()) {
+			for(Player player : this.plugin.getServer().getOnlinePlayers()) {
 				
 				String currentName = player.getName();
-				final String prefix = this.plugin.getConfig().getString("tablist.prefix");
+				String prefix = this.plugin.getConfig().getString("tablist.prefix");
 	            player.setPlayerListName(ChatColor.translateAlternateColorCodes('&', prefix.replace("%ping%", "" + PingUtil.getPing(player))) + " " + currentName + " ");
 				
 			}

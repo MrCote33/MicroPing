@@ -12,11 +12,11 @@ public class PingReloadCommand implements CommandExecutor{
 	
 	private MicroPing plugin;
 	
-	public PingReloadCommand(final MicroPing plugin) {
+	public PingReloadCommand(MicroPing plugin) {
 		this.plugin = plugin;
 	}
 	
-	public boolean onCommand(final CommandSender sender, final Command c, final String label, final String[] args) {
+	public boolean onCommand(CommandSender sender, Command c, String label, String[] args) {
 		
 		if(!sender.hasPermission("microping.reload")) {
 			sender.sendMessage(ChatColor.translateAlternateColorCodes('&', this.plugin.getConfig().getString("permission-system.no-perm-message")));

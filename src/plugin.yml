@@ -1,9 +1,10 @@
 name: MicroPing
 main: xyz.mrcote33.ping.MicroPing
 author: MrCote33
-version: "0.5"
+version: "0.6"
 api-version: "1.16"
 description: "MicroPing is minimalist and modificated version of SpigotPing."
+softdepend: [PlaceholderAPI]
 commands:
     pingreload:
       description: Reloads the plugin.

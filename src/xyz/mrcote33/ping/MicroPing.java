@@ -1,10 +1,12 @@
 package xyz.mrcote33.ping;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import xyz.mrcote33.ping.commands.PingReloadCommand;
+import xyz.mrcote33.ping.placeholder.CustomPlaceholder;
 import xyz.mrcote33.ping.tablist.PingTabList;
 
 public class MicroPing extends JavaPlugin {
@@ -18,6 +20,11 @@ public class MicroPing extends JavaPlugin {
 	public void onEnable() {
 		
 		(MicroPing.instance = this).saveDefaultConfig();
+		
+		if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+			new CustomPlaceholder(this).register();
+		}
+		
 		this.getCommand("pingreload").setExecutor((CommandExecutor) new PingReloadCommand(this));
 		this.registerTask();
 		
@@ -37,7 +44,7 @@ public class MicroPing extends JavaPlugin {
             this.getLogger().info("The permission-system is enabled. Please check that users have proper permissions.");
         }
 		
-		final Long delay = this.getConfig().getLong("tablist.update-delay");
+		Long delay = this.getConfig().getLong("tablist.update-delay");
 		
 		if(this.getConfig().getBoolean("tablist.enabled")) {
 			new PingTabList(this).runTaskTimerAsynchronously((Plugin)this, delay * 20L, delay * 20L);
